@@ -30,12 +30,10 @@ router.get("/", function (req, res, next) {
             price: " Rs : 929 /-",
         },
     ];
-    const sample = { name: "umar", comments: { comment: "sample cooment", date: "12/122/222" }, admin: false };
-
     if (req.session.loggedIn) {
         res.render("mypage", { values, data });
-    } else {
-        res.redirect("/");
+    }else{
+        res.redirect("/")
     }
 });
 

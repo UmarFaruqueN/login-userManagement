@@ -4,11 +4,15 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-    if (req.session.loggedIn) {
-        res.redirect("/mypage");
-    } else {
-     res.render("index", { title: "week-4", name: "my name" });
-    }
+    if(req.session.loggedIn){
+        console.log(req.session.loggedIn);
+        res.redirect('/mypage')
+    }else{
+    res.render("index", { title: "week-4", name: "my name" });}
+
+        
+   
+  
 });
 
 router.post("/signIn", function (req, res) {
@@ -22,9 +26,9 @@ router.post("/signIn", function (req, res) {
         res.redirect("/");
     }
 });
-
 router.get("/logOut", function (req, res) {
     req.session.destroy();
     res.redirect("/");
 });
+
 module.exports = router;
