@@ -1,0 +1,21 @@
+{{#each values}}
+
+    <h1>{{@index}}. {{this}}</h1>
+
+{{/each}}
+
+<h1>{{sample.comments.comment}}</h1>
+
+{{#if sample.admin}}
+
+    <h1>this is admin</h1>
+
+{{else}}
+
+    <h1> this is njormal user</h1>
+
+{{/if}}
+
+{{#each tes}}
+    <h1>{{this.name}}</h1>
+{{/each}}
