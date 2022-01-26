@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-between">
+        {{#if userM}}
+        <h1 class="">User Management</h1>
+        
+
+        <a href="/admin/adminLogOut" class="btn btn-outline-danger me-2" type="button">Log Out</a>
+        {{/if}}
+        {{#if aLogin}}
+        <h1 class="">Admin LogIn Screen</h1>
+        <a href="/login" class="btn btn-outline-danger me-2" type="button">User Log In</a>
+        {{/if}}
+        {{#if aUser}}
+        <h1 class="">Add New User</h1>
+        {{/if}}
+         {{#if eUser}}
+        <h1 class="">Edit User Data</h1>
+        {{/if}}
+
+
+    </form>
+</nav>

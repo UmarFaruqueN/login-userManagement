@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-between">
+        {{#if homepage}}
+        <h1 class="">Home Page</h1>
+            <a href="/logOut" class="btn btn-outline-success me-2" type="button">Log Out</a>
+        {{/if}}
+        {{#if login}}
+        <h1 class="">Log In Page</h1>
+         <a href="/admin" class="btn btn-outline-danger me-2" type="button">Admin Log in</a>
+            <a href="/signup" class="btn btn-outline-success me-2" type="button">Sign up</a>
+        {{/if}}
+        {{#if signup}}
+        <h1 class="">Sign Up Page</h1>
+            <a href="/login" class="btn btn-outline-success me-2" type="button">Log In</a>
+        {{/if}}
+        {{#if alogin}}
+        <h1 class="">Admin Log In Page</h1>
+         
+        {{/if}}
+    </form>
+</nav>

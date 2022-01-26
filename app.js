@@ -4,15 +4,21 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
+var hbs = require('express-handlebars');
+var db = require('./config/connections');
 
-var indexRouter = require("./routes/index");
-var mypage = require("./routes/mypage");
+
+var adminRoute = require("./routes/admin");
+var userRoute = require("./routes/user");
+const { Db } = require("mongodb");
+const { log } = require("console");
 
 var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
+app.engine('hbs',hbs.engine({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',patialsDir:__dirname+'/views/partials/',runtimeOptions: { allowProtoPropertiesByDefault: true, allowProtoMethodsByDefault: true,}}))
 
 app.use(function (req, res, next) {
     res.set("cache-control", "no-cache,no-store,must-revalidate");
@@ -25,8 +31,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/mypage", mypage);
+db.connect((err)=>{
+    if(err)
+    console.log("db err"+err);
+    else
+    console.log("db connected");
+});
+
+app.use("/", userRoute);
+app.use("/admin", adminRoute);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

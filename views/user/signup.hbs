@@ -1,0 +1,86 @@
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<h2>{{name}}</h2> --}}
+
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+       <form action="/signup" method="post" id="signup">
+
+                            <!-- name input -->
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form1Example13">Name</label>
+                                <input
+                                    type="text"
+                                    name="user_name"
+                                    id="form1Example13"
+                                    class="form-control form-control-lg"
+                                    required="true"
+                                />
+
+                            </div>
+
+                            <!-- number input -->
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form1Example13">Number</label>
+                                <input
+                                    type="number"
+                                    name="user_number"
+                                    id="form1Example13"
+                                    maxlength="10"
+                                    class="form-control form-control-lg"
+                                    required="true"
+                                />
+
+
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form1Example13">Email address</label>
+                                <input
+                                    type="email"
+                                    name="user_email"
+                                    id="form1Example13"
+                                    class="form-control form-control-lg"
+                                    required="true"
+                                />
+
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form1Example23">Password</label>
+                                <input
+                                    type="password"
+                                    name="user_password"
+                                    id="form1Example23"
+                                    class="form-control form-control-lg"
+                                    required="true"
+                                />
+
+                            </div>
+                            <!-- status input -->
+
+                            {{!-- <div class="form-outline mb-3" style="display: none;">
+                                <label for="form1Example23" class="form-label">Status</label>
+                                <select id="form1Example23" class="form-select" name="user_status">
+                                    <option value="Active">Active</option>
+                                    
+                                </select>
+                            </div> --}}
+
+                        
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+
+                        </form>
+      </div>
+    </div>
+  </div>
+</section>

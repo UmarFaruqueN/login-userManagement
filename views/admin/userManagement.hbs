@@ -1,0 +1,36 @@
+<section>
+    <div class="container" >
+        <div class="d-flex justify-content-center">
+            <a href="/admin/add-user" class="btn btn-outline-primary me-2">Add User</a>
+
+        </div>
+        
+
+        <table class="table  " id="myTable">
+            <thead>
+                <tr>
+                     <th scope="col">Name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each userData}}
+                    <tr>
+
+                        <td>{{this.user_name}}</td>
+                        <td>{{this.user_email}}</td>
+                        <td>{{this.user_number}}</td>
+                        <td>
+                            <a href="/admin/edit_user/{{this._id}}" class="btn btn-primary"> Edit </a>
+                            <a href="/admin/delete_user/{{this._id}}" class="btn btn-danger"> Delete</a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+
+</section>
