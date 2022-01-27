@@ -1,5 +1,7 @@
 const async = require("hbs/lib/async");
 var db = require("../config/connections");
+const bcrypt = require('bcrypt');
+const { status } = require("express/lib/response");
 
 module.exports = {
     addUser: (users)=>{
@@ -16,7 +18,8 @@ module.exports = {
     
 
     doSignup: (userData) => {
-        return new Promise((resolve, reject) => {
+        return new Promise(async(resolve, reject) => {
+            userData.user_password=await bcrypt.hash(userData.user_password,10)
             db.get()
                 .collection("users")
                 .insertOne(userData)
@@ -30,17 +33,21 @@ module.exports = {
         return new Promise(async (resolve, reject) => {
             let loginStatus = false;
             let response = {};
-            let user = await db.get().collection("users").findOne({ user_email: userData.user_email });
+            let user = await db.get().collection("users").findOne( { user_email: userData.user_email});
             if (user) {
-                if (userData.user_password === user.user_password) {
-                    console.log("login sucesss");
-                    response.user = user;
-                    response.status = true;
-                    resolve(response);
-                } else {
-                    console.log("login failed");
-                    resolve({ status: false });
-                }
+                bcrypt.compare(userData.user_password,user.user_password).then((status)=>{
+                    if (status) {
+                        console.log("login sucesss");
+                        response.user = user;
+                        response.status = true;
+                        resolve(response);
+                    } else {
+                        console.log("login failed");
+                        resolve({ status: false });
+                    }
+                    
+                })
+               
             } else {
                 console.log("login failed");
                 resolve({ status: false });

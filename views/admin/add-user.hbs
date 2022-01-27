@@ -8,71 +8,67 @@
                         <form action="/admin/addUser" method="post" id="signup">
 
                             <!-- name input -->
-                            <div class="form-outline mb-2">
-                                <label class="form-label" for="form1Example13">Name</label>
-                                <input
-                                    type="text"
-                                    name="user_name"
-                                    id="form1Example13"
-                                    class="form-control form-control-lg"
-                                    required="true"
-                                />
+                            <div class="form-outline mb-2 text-danger">
+                                <label class="form-label" for="user_name"></label>
+                                <input type="text" name="user_name" id="user_name" class="form-control form-control-lg " placeholder="Name" />
 
                             </div>
 
                             <!-- number input -->
-                            <div class="form-outline mb-2">
-                                <label class="form-label" for="form1Example13">Number</label>
+                            <div class="form-outline mb-2 text-danger">
+                                <label class="form-label" for="user_number"></label>
                                 <input
+                                placeholder="Number"
                                     type="number"
                                     name="user_number"
-                                    id="form1Example13"
+                                    id="user_numnber"
                                     maxlength="10"
-                                    class="form-control form-control-lg"
-                                    required="true"
+                                    class="form-control form-control-lg "
                                 />
 
                             </div>
 
                             <!-- Email input -->
-                            <div class="form-outline mb-2">
-                                <label class="form-label" for="form1Example13">Email address</label>
+                            <div class="form-outline mb-2 text-danger">
+                                <label class="form-label" for="user_email"></label>
                                 <input
+                                placeholder="Email"
                                     type="email"
                                     name="user_email"
-                                    id="form1Example13"
-                                    class="form-control form-control-lg"
+                                    id="user_email"
+                                    class="form-control form-control-lg valid"
                                     required="true"
                                 />
 
                             </div>
 
                             <!-- Password input -->
-                            <div class="form-outline mb-2">
-                                <label class="form-label" for="form1Example23">Password</label>
+                            <div class="form-outline mb-2 text-danger">
+                                <label class="form-label valid" for="user_password"></label>
                                 <input
+                                placeholder="Password"
                                     type="password"
                                     name="user_password"
-                                    id="form1Example23"
-                                    class="form-control form-control-lg"
+                                    id="user_password"
+                                    class="form-control form-control-lg valid"
                                     required="true"
                                 />
 
                             </div>
-
                             <!-- status input -->
 
-                            {{!-- <div class="form-outline mb-3">
+                            {{! <div class="form-outline mb-3" style="display: none;">
                                 <label for="form1Example23" class="form-label">Status</label>
                                 <select id="form1Example23" class="form-select" name="user_status">
-                                    <option value="active">Active</option>
-                                    <option value="Blocked">Blocked</option>
+                                    <option value="Active">Active</option>
+                                    
                                 </select>
-                            </div> --}}
+                            </div> }}
 
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>
-                            <a href="/admin/cancel" class="btn btn-danger btn-lg btn-block">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="return confirm('Are you sure you want to add this user?')">Add New User</button>
+
+                            <a href="/admin/cancel" class="btn btn-danger btn-lg btn-block" onclick="return confirm('Are you sure you want to cancel & go back?')">Cancel & Go Back</a>
 
                         </form>
                     </div>

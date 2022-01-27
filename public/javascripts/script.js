@@ -26,7 +26,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:true,
-                minlength:5,
+            
             }
         },
         messages:{
@@ -37,7 +37,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:"*Required Feild",
-                minlength:"Min character 5",
+                
 
             }
         },
@@ -52,7 +52,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:true,
-                minlength:5,
+            
             }
         },
         messages:{
@@ -63,7 +63,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:"*Required Feild",
-                minlength:"Min character 5",
+                
 
             }
         }
@@ -92,7 +92,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:true,
-                minlength:5,
+                
             }
         },
         messages:{
@@ -114,7 +114,7 @@ $(document).ready(()=>{
             },
             user_password:{
                 required:"*Required Feild",
-                minlength:"Min character 5",
+            
             }
         }
    
